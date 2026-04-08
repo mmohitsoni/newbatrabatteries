@@ -528,6 +528,75 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   .bat-grid { padding: 14px 12px; }
 }
 
+
+
+
+
+/* ── FREE BATTERY GAME ── */
+.fbat-section{background:linear-gradient(135deg,#101D30,#1B2E48);border-top:2px solid var(--am);border-bottom:2px solid var(--am);}
+.fbat-toggle{width:100%;padding:18px 52px;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;font-family:"DM Sans",Arial;}
+.fbat-toggle-left{display:flex;align-items:center;gap:14px;}
+.fbat-toggle-icon{font-size:28px;animation:bat-bounce 1.5s ease-in-out infinite;}
+@keyframes bat-bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.fbat-toggle-text{text-align:left;}
+.fbat-toggle-title{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:#fff;display:block;}
+.fbat-toggle-sub{font-size:12px;color:rgba(255,255,255,.55);margin-top:2px;display:block;}
+.fbat-arrow{font-size:20px;color:var(--amlt);transition:transform .3s;}
+.fbat-arrow.open{transform:rotate(180deg);}
+.fbat-body{display:none;padding:0 52px 28px;}
+.fbat-body.open{display:block;}
+.fbat-instruction{text-align:center;font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px;line-height:1.6;}
+.fbat-instruction strong{color:var(--amlt);}
+.fbat-score{text-align:center;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:10px;}
+.fbat-arena{position:relative;width:100%;max-width:600px;height:280px;background:rgba(0,0,0,.3);border:1.5px solid rgba(240,170,64,.25);border-radius:8px;margin:0 auto;overflow:hidden;touch-action:none;}
+.fbat-battery{position:absolute;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:left .15s cubic-bezier(.17,.67,.39,1.3),top .15s cubic-bezier(.17,.67,.39,1.3);}
+.fbat-win{display:none;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center;height:100%;}
+.fbat-win.show{display:flex;}
+.fbat-win-title{font-family:"Playfair Display",serif;font-size:24px;color:var(--amlt);}
+.fbat-win-sub{font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;}
+.fbat-win-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px;}
+.fbat-win-call{background:linear-gradient(135deg,var(--am),var(--amlt));color:var(--ink);padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:700;font-size:13px;display:flex;align-items:center;gap:7px;}
+.fbat-win-wa{background:#25D366;color:#fff;padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:700;font-size:13px;display:flex;align-items:center;gap:7px;}
+.fbat-reset{background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:6px 14px;border-radius:3px;font-size:11px;cursor:pointer;margin-top:6px;font-family:"DM Sans",Arial;}
+@media(max-width:640px){
+  .fbat-toggle{padding:16px 18px;}
+  .fbat-body{padding:0 14px 20px;}
+  .fbat-arena{height:240px;}
+  .fbat-toggle-title{font-size:16px;}
+}
+
+
+/* ── GAME PAGE ── */
+#page-game { min-height: 100vh; background: linear-gradient(160deg,#0A1628 0%,#101D30 50%,#1B2E48 100%); }
+.gp-header { padding: 20px 28px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(240,170,64,.2); }
+.gp-back { display: flex; align-items: center; gap: 8px; background: transparent; border: 1.5px solid rgba(255,255,255,.2); color: rgba(255,255,255,.8); padding: 9px 18px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; font-family: "DM Sans",Arial; transition: all .2s; }
+.gp-back:hover { background: rgba(255,255,255,.08); border-color: var(--amlt); color: var(--amlt); }
+.gp-header-title { font-family: "Playfair Display",serif; font-size: 18px; color: var(--amlt); font-weight: 700; }
+.gp-body { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 20px; min-height: calc(100vh - 72px); }
+.gp-eyebrow { font-size: 10px; letter-spacing: 4px; color: rgba(255,255,255,.4); text-transform: uppercase; margin-bottom: 10px; text-align: center; }
+.gp-title { font-family: "Playfair Display",serif; font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 6px; text-align: center; }
+.gp-title span { color: var(--amlt); }
+.gp-sub { font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 8px; text-align: center; line-height: 1.6; }
+.gp-sub strong { color: var(--amlt); }
+.gp-score { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,.35); text-transform: uppercase; margin-bottom: 18px; text-align: center; }
+.gp-arena { position: relative; width: min(92vw, 580px); height: min(65vw, 360px); background: rgba(0,0,0,.35); border: 2px solid rgba(240,170,64,.3); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.4); }
+.gp-battery { position: absolute; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: left .14s cubic-bezier(.17,.67,.39,1.4), top .14s cubic-bezier(.17,.67,.39,1.4); }
+.gp-arena-hint { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-size: 10px; color: rgba(255,255,255,.25); letter-spacing: 1px; pointer-events: none; }
+.gp-win { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 28px; text-align: center; height: 100%; }
+.gp-win.show { display: flex; }
+.gp-win-emoji { font-size: 50px; animation: pop .4s ease; }
+@keyframes pop { 0%{transform:scale(0)} 70%{transform:scale(1.2)} 100%{transform:scale(1)} }
+.gp-win-title { font-family: "Playfair Display",serif; font-size: 26px; color: var(--amlt); font-weight: 700; }
+.gp-win-sub { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.7; }
+.gp-win-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+.gp-call { background: linear-gradient(135deg,var(--am),var(--amlt)); color: var(--ink); padding: 13px 26px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+.gp-wa { background: #25D366; color: #fff; padding: 13px 26px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+.gp-reset { background: transparent; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.5); padding: 8px 18px; border-radius: 3px; font-size: 11px; cursor: pointer; margin-top: 4px; font-family: "DM Sans",Arial; }
+/* Hero button */
+.hero-game-btn { position: absolute; top: 20px; right: 52px; background: rgba(10,22,40,.88); color: var(--amlt); border: 1.5px solid rgba(224,144,32,.7); padding: 10px 20px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 1px; cursor: pointer; font-family: "DM Sans",Arial; display: flex; align-items: center; gap: 7px; z-index: 5; box-shadow: 0 4px 16px rgba(0,0,0,.4); white-space: nowrap; transition: background .2s; backdrop-filter: blur(6px); }
+.hero-game-btn:hover { transform: scale(1.05); box-shadow: 0 6px 22px rgba(0,0,0,.35); }
+@media(max-width:640px) { .hero-game-btn { position: absolute; top: 20px; right: 52px; background: rgba(10,22,40,.88); color: var(--amlt); border: 1.5px solid rgba(224,144,32,.7); padding: 10px 20px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 1px; cursor: pointer; font-family: "DM Sans",Arial; display: flex; align-items: center; gap: 7px; z-index: 5; box-shadow: 0 4px 16px rgba(0,0,0,.4); white-space: nowrap; transition: background .2s; backdrop-filter: blur(6px); } }
+
 </style>
 </head>
 <body>
@@ -573,7 +642,8 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 
 <!-- HOME -->
 <div class="page active" id="page-home">
-  <div class="hero">
+  <div class="hero" style="position:relative;">
+  <button class="hero-game-btn" onclick="showPage('game')">🔋 Get a Free Battery!</button>
   <div class="hero-top">
 
     <!-- LEFT: Text -->
@@ -596,6 +666,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
         <span class="h-pill">&#9989; <span id="p3">Doorstep Delivery</span></span>
         <span class="h-pill">&#9989; <span id="p4">Free Battery Check</span></span>
       </div>
+      
     </div>
 
     <!-- RIGHT: Animation Scene Box -->
@@ -850,6 +921,54 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     </div>
   </div>
 
+
+  <!-- ── FREE BATTERY GAME ── -->
+  <div class="fbat-section">
+    <button class="fbat-toggle" onclick="toggleFBat(this)">
+      <div class="fbat-toggle-left">
+        <span class="fbat-toggle-icon">🔋</span>
+        <div class="fbat-toggle-text">
+          <span class="fbat-toggle-title">Get a Free Battery!</span>
+          <span class="fbat-toggle-sub">Catch the battery to claim your prize 👆</span>
+        </div>
+      </div>
+      <span class="fbat-arrow" id="fbat-arrow">&#9660;</span>
+    </button>
+    <div class="fbat-body" id="fbat-body">
+      <div class="fbat-instruction">
+        <strong>&#x1F3AF; Catch the battery and win a FREE battery!</strong><br/>
+        Tap or click it before it escapes...
+      </div>
+      <div class="fbat-score" id="fbat-score">Attempts: 0 / 10</div>
+      <div class="fbat-arena" id="fbat-arena">
+        <div class="fbat-battery" id="fbat-bat">
+          <svg width="88" height="44" viewBox="0 0 88 44" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="4" width="76" height="36" rx="7" fill="none" stroke="#F0AA40" stroke-width="2.5"/>
+            <rect x="77" y="12" width="10" height="20" rx="5" fill="#F0AA40"/>
+            <rect x="5" y="8" width="68" height="28" rx="5" fill="#F0AA40" opacity=".95"/>
+            <text x="39" y="28" font-size="16" font-weight="900" fill="white" text-anchor="middle" font-family="Arial,sans-serif">FREE!</text>
+          </svg>
+        </div>
+        <div class="fbat-win" id="fbat-win">
+          <div style="font-size:44px;">&#127881;</div>
+          <div class="fbat-win-title">You Caught It! &#128267;</div>
+          <div class="fbat-win-sub">Call us now to claim your <strong style="color:var(--amlt);">FREE battery</strong>!<br/>Show this screen at the shop.</div>
+          <div class="fbat-win-btns">
+            <a href="tel:9779999277" class="fbat-win-call">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.21 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09A16 16 0 0016.93 17.1l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Call 9779999277
+            </a>
+            <a href="https://wa.me/919779999277?text=I+caught+the+free+battery+on+your+website!+I+want+to+claim+it." target="_blank" class="fbat-win-wa">
+              <svg width="15" height="15" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.5L.5 31.2l7.9-2.3c2.1 1.2 4.5 1.8 7 1.8 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8zm8.3 21.8c-.5-.2-2.7-1.3-3.1-1.5-.4-.2-.7-.2-1 .2-.3.4-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.7-2.6-3.2-.3-.5 0-.7.2-1l.7-.7c.2-.2.3-.4.4-.6.1-.3 0-.5-.1-.7-.1-.2-1-2.4-1.4-3.3-.4-.9-.7-.8-1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.7s1.6 4.3 1.9 4.6c.3.3 3.2 4.9 7.7 6.9 1.1.5 1.9.7 2.6.9 1.1.3 2.1.3 2.9.2.9-.1 2.7-1.1 3.1-2.1.4-1 .4-1.9.3-2.1-.2-.2-.5-.3-1-.5z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <button class="fbat-reset" onclick="resetFBat()">&#8635; Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- CONTACT SECTION -->
   <div class="sec sec-ti" id="contact-section">
     <div class="max">
@@ -915,6 +1034,45 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     <button class="filter-btn" id="fb-er" onclick="setFilter('erickshaw',this)">&#128666; E-Rickshaw</button>
   </div>
   <div class="bat-grid" id="bat-grid"></div>
+</div>
+
+
+<div class="page" id="page-game">
+  <div class="gp-header">
+    <button class="gp-back" onclick="showPage('home')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back
+    </button>
+    <div class="gp-header-title">&#128267; Free Battery Challenge</div>
+    <div style="width:60px;"></div>
+  </div>
+  <div class="gp-body">
+    <div class="gp-eyebrow">New Batra Batteries &middot; Chandigarh</div>
+    <h1 class="gp-title">Catch the <span>Battery!</span></h1>
+    <p class="gp-sub"><strong>Win a FREE battery!</strong><br/>Tap it before it escapes...</p>
+    <div class="gp-score" id="gp-score">Attempts: 0 / 10</div>
+    <div class="gp-arena" id="gp-arena">
+      <div class="gp-battery" id="gp-bat">
+        <svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="5" width="86" height="40" rx="8" fill="none" stroke="#F0AA40" stroke-width="2.5"/>
+          <rect x="87" y="14" width="12" height="22" rx="6" fill="#F0AA40"/>
+          <rect x="5" y="9" width="78" height="32" rx="6" fill="#F0AA40" opacity=".95"/>
+          <text x="44" y="31" font-size="17" font-weight="900" fill="white" text-anchor="middle" font-family="Arial,sans-serif">FREE!</text>
+        </svg>
+      </div>
+      <div class="gp-arena-hint" id="gp-hint">TAP THE BATTERY &#9889;</div>
+      <div class="gp-win" id="gp-win">
+        <div class="gp-win-emoji">&#127881;</div>
+        <div class="gp-win-title">You Caught It!</div>
+        <div class="gp-win-sub">Show this screen at our shop and claim your<br/><strong style="color:var(--amlt);font-size:15px;">FREE Battery!</strong></div>
+        <div class="gp-win-btns">
+          <a href="tel:9779999277" class="gp-call">&#128222; Call 9779999277</a>
+          <a href="https://wa.me/919779999277?text=Hi!+I+caught+the+free+battery+on+your+website!" target="_blank" class="gp-wa">&#128172; WhatsApp</a>
+        </div>
+        <button class="gp-reset" onclick="resetGP()">&#8635; Play Again</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ADMIN -->
@@ -1466,6 +1624,137 @@ window.addEventListener('load', function(){
   setTimeout(nextScene, 400);
 });
 
+
+// ── FREE BATTERY GAME ──────────────────────────────────────
+var _fb_attempts = 0, _fb_max = 10, _fb_open = false;
+
+function toggleFBat(btn) {
+  var body = document.getElementById('fbat-body');
+  var arrow = document.getElementById('fbat-arrow');
+  _fb_open = !_fb_open;
+  body.classList.toggle('open', _fb_open);
+  arrow.classList.toggle('open', _fb_open);
+  if (_fb_open) { setTimeout(fbatMoveBat, 200); }
+}
+
+function fbatMoveBat() {
+  var arena = document.getElementById('fbat-arena');
+  var bat   = document.getElementById('fbat-bat');
+  if (!arena || !bat) return;
+  var aw = arena.offsetWidth  - 100;
+  var ah = arena.offsetHeight - 55;
+  bat.style.left = (10 + Math.random() * aw) + 'px';
+  bat.style.top  = (10 + Math.random() * ah) + 'px';
+}
+
+function fbatCatch() {
+  var bat = document.getElementById('fbat-bat');
+  var win = document.getElementById('fbat-win');
+  var score = document.getElementById('fbat-score');
+  if (!bat || !win) return;
+  _fb_attempts++;
+  if (_fb_attempts >= _fb_max) {
+    bat.style.display = 'none';
+    win.classList.add('show');
+    score.textContent = 'You got it after ' + _fb_attempts + ' tries!';
+    return;
+  }
+  score.textContent = 'Attempts: ' + _fb_attempts + ' / ' + _fb_max;
+  setTimeout(fbatMoveBat, 50 + Math.random() * 80);
+}
+
+function resetFBat() {
+  _fb_attempts = 0;
+  var bat = document.getElementById('fbat-bat');
+  var win = document.getElementById('fbat-win');
+  var score = document.getElementById('fbat-score');
+  if (bat) bat.style.display = 'block';
+  if (win) win.classList.remove('show');
+  if (score) score.textContent = 'Attempts: 0 / ' + _fb_max;
+  fbatMoveBat();
+}
+
+// Attach events after DOM ready
+window.addEventListener('load', function() {
+  var bat = document.getElementById('fbat-bat');
+  if (!bat) return;
+  // Click / tap = catch attempt
+  bat.addEventListener('click',       fbatCatch);
+  bat.addEventListener('touchstart',  function(e){ e.preventDefault(); fbatCatch(); }, {passive:false});
+  // Hover = run away (desktop only)
+  bat.addEventListener('mouseenter', function() {
+    if (_fb_attempts < _fb_max && _fb_open) fbatMoveBat();
+  });
+});
+
+
+// ── GAME PAGE ────────────────────────────────────────────────
+var _gp_att = 0, _gp_max = 10;
+
+function gpMoveBat() {
+  var arena = document.getElementById('gp-arena');
+  var bat   = document.getElementById('gp-bat');
+  if (!arena || !bat) return;
+  var aw = arena.offsetWidth  - 110;
+  var ah = arena.offsetHeight - 60;
+  if (aw < 10) aw = 10;
+  if (ah < 10) ah = 10;
+  bat.style.left = (8 + Math.random() * aw) + 'px';
+  bat.style.top  = (8 + Math.random() * ah) + 'px';
+}
+
+function gpCatch(e) {
+  if (e) e.stopPropagation();
+  _gp_att++;
+  var bat   = document.getElementById('gp-bat');
+  var win   = document.getElementById('gp-win');
+  var score = document.getElementById('gp-score');
+  var hint  = document.getElementById('gp-hint');
+  if (!bat || !win) return;
+  if (_gp_att >= _gp_max) {
+    bat.style.display = 'none';
+    if (hint) hint.style.display = 'none';
+    win.classList.add('show');
+    if (score) score.textContent = 'Got it in ' + _gp_att + ' tries! 🎉';
+    return;
+  }
+  if (score) score.textContent = 'Attempts: ' + _gp_att + ' / ' + _gp_max;
+  setTimeout(gpMoveBat, 40 + Math.random() * 100);
+}
+
+function resetGP() {
+  _gp_att = 0;
+  var bat   = document.getElementById('gp-bat');
+  var win   = document.getElementById('gp-win');
+  var score = document.getElementById('gp-score');
+  var hint  = document.getElementById('gp-hint');
+  if (bat)   { bat.style.display = 'block'; }
+  if (win)   { win.classList.remove('show'); }
+  if (score) { score.textContent = 'Attempts: 0 / ' + _gp_max; }
+  if (hint)  { hint.style.display = 'block'; }
+  gpMoveBat();
+}
+
+window.addEventListener('load', function() {
+  var bat = document.getElementById('gp-bat');
+  if (!bat) return;
+  bat.addEventListener('click',      gpCatch);
+  bat.addEventListener('touchstart', function(e){ e.preventDefault(); gpCatch(e); }, {passive:false});
+  bat.addEventListener('mouseenter', function() {
+    if (_gp_att < _gp_max) gpMoveBat();
+  });
+});
+
+
+
+
+var _gp_att=0,_gp_max=10;
+function gpMoveBat(){var a=document.getElementById('gp-arena'),b=document.getElementById('gp-bat');if(!a||!b)return;var w=Math.max(a.offsetWidth-112,20),h=Math.max(a.offsetHeight-62,20);b.style.left=(8+Math.random()*w)+'px';b.style.top=(8+Math.random()*h)+'px';}
+function gpCatch(e){if(e)e.stopPropagation();_gp_att++;var b=document.getElementById('gp-bat'),w=document.getElementById('gp-win'),s=document.getElementById('gp-score'),h=document.getElementById('gp-hint');if(!b||!w)return;if(_gp_att>=_gp_max){b.style.display='none';if(h)h.style.display='none';w.classList.add('show');if(s)s.textContent='Got it in '+_gp_att+' tries!';return;}if(s)s.textContent='Attempts: '+_gp_att+' / '+_gp_max;setTimeout(gpMoveBat,40+Math.random()*100);}
+function resetGP(){_gp_att=0;var b=document.getElementById('gp-bat'),w=document.getElementById('gp-win'),s=document.getElementById('gp-score'),h=document.getElementById('gp-hint');if(b)b.style.display='block';if(w)w.classList.remove('show');if(s)s.textContent='Attempts: 0 / 10';if(h)h.style.display='block';setTimeout(gpMoveBat,80);}
+window.addEventListener('load',function(){var b=document.getElementById('gp-bat');if(!b)return;b.addEventListener('click',gpCatch);b.addEventListener('touchstart',function(e){e.preventDefault();gpCatch(e);},{passive:false});b.addEventListener('mouseenter',function(){if(_gp_att<_gp_max)gpMoveBat();});});
+var _spOrig=showPage;showPage=function(p){_spOrig(p);if(p==='game')resetGP();};
+
 </script>
 
 <div id="float-btns" style="position:fixed;bottom:24px;right:20px;display:flex;flex-direction:column;gap:12px;z-index:9999;">
@@ -1476,5 +1765,8 @@ window.addEventListener('load', function(){
     <svg width="22" height="22" viewBox="0 0 32 32" fill="white"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.5L.5 31.2l7.9-2.3c2.1 1.2 4.5 1.8 7 1.8 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8zm0 27.8c-2.3 0-4.5-.6-6.5-1.8l-.5-.3-4.7 1.4 1.3-4.6-.3-.5C4.1 20.7 3.4 18.4 3.4 16 3.4 9.1 9.1 3.4 16 3.4S28.6 9.1 28.6 16 22.9 28.6 16 28.6zm8.3-10.6c-.5-.2-2.7-1.3-3.1-1.5-.4-.2-.7-.2-1 .2-.3.4-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.7-2.6-3.2-.3-.5 0-.7.2-1l.7-.7c.2-.2.3-.4.4-.6.1-.3 0-.5-.1-.7-.1-.2-1-2.4-1.4-3.3-.4-.9-.7-.8-1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.7s1.6 4.3 1.9 4.6c.3.3 3.2 4.9 7.7 6.9 1.1.5 1.9.7 2.6.9 1.1.3 2.1.3 2.9.2.9-.1 2.7-1.1 3.1-2.1.4-1 .4-1.9.3-2.1-.2-.2-.5-.3-1-.5z"/></svg>
   </a>
 </div>
+
+
+
 </body>
 </html>
