@@ -124,27 +124,25 @@ nav{background:var(--nvdk);padding:0 24px 0 30px;height:62px;display:flex;align-
 /* ── CONTACT SECTION — new layout ── */
 #leaflet-map{width:100%;height:320px;border-radius:5px;border:3px solid var(--am);box-shadow:0 6px 22px rgba(0,0,0,.14);margin-bottom:12px;z-index:1;}
 .map-link{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--am),var(--amlt));color:var(--ink);padding:9px 20px;border-radius:3px;text-decoration:none;font-size:12px;font-weight:700;margin-bottom:20px;}
-.ct-below{display:grid;grid-template-columns:200px 1fr;gap:16px;align-items:start;}
-@media(max-width:700px){.ct-below{grid-template-columns:1fr;}}
-@media(max-width:520px){.ct-below{grid-template-columns:1fr;}}
-.own-box{border-radius:4px;overflow:hidden;box-shadow:0 6px 20px rgba(16,29,48,.22);}
-.own-box img{width:100%;height:auto;max-height:280px;object-fit:contain;object-position:top center;display:block;background:var(--nvdk);}
-.own-info{padding:12px 14px;background:linear-gradient(135deg,var(--nvdk),var(--nv));}
-.own-info h3{font-family:"Playfair Display",serif;font-size:17px;color:#fff;margin-bottom:2px;}
-.own-info p{font-size:10px;color:var(--amlt);letter-spacing:1.5px;text-transform:uppercase;}
-.ct-details{display:flex;flex-direction:column;gap:9px;}
-.cc{background:#fff;border:1.5px solid var(--ampal);border-left:3px solid var(--am);border-radius:4px;padding:11px 13px;display:flex;gap:10px;align-items:flex-start;}
-.cc-ic{width:34px;height:34px;background:linear-gradient(135deg,var(--nvdk),var(--nv));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.cc-lbl{font-size:9px;color:var(--am);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:2px;}
-.cc-val{font-size:13px;font-weight:600;color:var(--ink);line-height:1.5;}
+
+
+
+
+
+
+
+
+
+
+
 .ct-cta-col{display:flex;flex-direction:column;gap:10px;}
 .cbox{background:linear-gradient(135deg,var(--am),var(--amlt));border-radius:4px;padding:14px;text-align:center;}
 .cbox-l{font-size:10px;font-weight:700;color:var(--nvdk);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
 .cbox-n{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;color:var(--ink);text-decoration:none;display:block;}
 .wa-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#128C7E,#25D366);color:#fff;padding:13px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:700;}
 .ct-hours-note{background:var(--nvdk);border-radius:4px;padding:12px 14px;}
-.ct-hours-note .cc-lbl{color:var(--amlt);}
-.ct-hours-note .cc-val{color:rgba(255,255,255,.85);font-size:12px;font-weight:500;}
+.ct-hours-note 
+.ct-hours-note 
 /* PRODUCTS */
 .ph{background:linear-gradient(135deg,var(--nvdk),var(--nv) 60%,#2D4A6B);padding:42px 52px 30px;border-bottom:3px solid var(--am);position:relative;overflow:hidden;}
 .ph::before{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:38px solid rgba(224,144,32,.08);pointer-events:none;}
@@ -601,6 +599,29 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 .sc-count { font-size:10px;color:rgba(255,255,255,.25);letter-spacing:2px;margin-top:10px; }
 @media(max-width:480px){.sc-title{font-size:24px;}.sc-wrap{height:min(60vw,200px);}}
 
+
+/* ── CONTACT REDESIGN ── */
+.ct-below { display:grid; grid-template-columns:200px 1fr; gap:20px; align-items:start; }
+@media(max-width:700px){ .ct-below{ grid-template-columns:1fr; } }
+
+.own-box { border-radius:8px; overflow:hidden; box-shadow:0 8px 28px rgba(16,29,48,.28); }
+.own-box img { width:100%; height:auto; max-height:280px; object-fit:cover; object-position:top center; display:block; background:var(--nvdk); }
+.own-info { padding:14px 16px; background:linear-gradient(135deg,var(--nvdk),var(--nv)); text-align:center; }
+.own-info h3 { font-family:"Playfair Display",serif; font-size:18px; color:#fff; margin-bottom:3px; }
+.own-info p { font-size:10px; color:var(--amlt); letter-spacing:2px; text-transform:uppercase; }
+
+.ct-details { display:flex; flex-direction:column; gap:10px; }
+.cc { background:#fff; border:1.5px solid var(--ampal); border-left:3px solid var(--am); border-radius:6px; padding:13px 15px; display:flex; gap:12px; align-items:flex-start; transition:box-shadow .2s; }
+.cc:hover { box-shadow:0 4px 16px rgba(30,48,80,.1); }
+.cc-ic { width:36px; height:36px; background:linear-gradient(135deg,var(--nvdk),var(--nv)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; }
+.cc-lbl { font-size:9px; color:var(--am); letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:3px; }
+.cc-val { font-size:13px; font-weight:600; color:var(--ink); line-height:1.6; }
+.ct-hours-note { background:linear-gradient(135deg,var(--nvdk),#1B2E48) !important; border-radius:6px !important; border:none !important; border-left:3px solid var(--am) !important; }
+.ct-hours-note .cc-lbl { color:var(--amlt) !important; }
+.ct-hours-note .cc-val { color:rgba(255,255,255,.85) !important; font-size:12px !important; font-weight:500 !important; }
+.ct-phone-link { color:var(--ink); text-decoration:none; font-weight:700; font-size:13px; }
+.ct-phone-link:hover { color:var(--am); }
+
 </style>
 </head>
 <body>
@@ -924,54 +945,6 @@ html, body { overflow-x: hidden; max-width: 100vw; }
     </div>
   </div>
 
-
-  <!-- ── FREE BATTERY GAME ── -->
-  <div class="fbat-section">
-    <button class="fbat-toggle" onclick="toggleFBat(this)">
-      <div class="fbat-toggle-left">
-        <span class="fbat-toggle-icon">🔋</span>
-        <div class="fbat-toggle-text">
-          <span class="fbat-toggle-title">Get a Free Battery!</span>
-          <span class="fbat-toggle-sub">Catch the battery to claim your prize 👆</span>
-        </div>
-      </div>
-      <span class="fbat-arrow" id="fbat-arrow">&#9660;</span>
-    </button>
-    <div class="fbat-body" id="fbat-body">
-      <div class="fbat-instruction">
-        <strong>&#x1F3AF; Catch the battery and win a FREE battery!</strong><br/>
-        Tap or click it before it escapes...
-      </div>
-      <div class="fbat-score" id="fbat-score">Attempts: 0</div>
-      <div class="fbat-arena" id="fbat-arena">
-        <div class="fbat-battery" id="fbat-bat">
-          <svg width="88" height="44" viewBox="0 0 88 44" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="4" width="76" height="36" rx="7" fill="none" stroke="#F0AA40" stroke-width="2.5"/>
-            <rect x="77" y="12" width="10" height="20" rx="5" fill="#F0AA40"/>
-            <rect x="5" y="8" width="68" height="28" rx="5" fill="#F0AA40" opacity=".95"/>
-            <text x="39" y="28" font-size="16" font-weight="900" fill="white" text-anchor="middle" font-family="Arial,sans-serif">FREE!</text>
-          </svg>
-        </div>
-        <div class="fbat-win" id="fbat-win">
-          <div style="font-size:44px;">&#127881;</div>
-          <div class="fbat-win-title">You Caught It! &#128267;</div>
-          <div class="fbat-win-sub">Call us now to claim your <strong style="color:var(--amlt);">FREE battery</strong>!<br/>Show this screen at the shop.</div>
-          <div class="fbat-win-btns">
-            <a href="tel:9779999277" class="fbat-win-call">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.21 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09A16 16 0 0016.93 17.1l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              Call 9779999277
-            </a>
-            <a href="https://wa.me/919779999277?text=I+caught+the+free+battery+on+your+website!+I+want+to+claim+it." target="_blank" class="fbat-win-wa">
-              <svg width="15" height="15" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.5L.5 31.2l7.9-2.3c2.1 1.2 4.5 1.8 7 1.8 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8zm8.3 21.8c-.5-.2-2.7-1.3-3.1-1.5-.4-.2-.7-.2-1 .2-.3.4-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.7-2.6-3.2-.3-.5 0-.7.2-1l.7-.7c.2-.2.3-.4.4-.6.1-.3 0-.5-.1-.7-.1-.2-1-2.4-1.4-3.3-.4-.9-.7-.8-1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.7s1.6 4.3 1.9 4.6c.3.3 3.2 4.9 7.7 6.9 1.1.5 1.9.7 2.6.9 1.1.3 2.1.3 2.9.2.9-.1 2.7-1.1 3.1-2.1.4-1 .4-1.9.3-2.1-.2-.2-.5-.3-1-.5z"/></svg>
-              WhatsApp
-            </a>
-          </div>
-          <button class="fbat-reset" onclick="resetFBat()">&#8635; Try Again</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- CONTACT SECTION -->
   <div class="sec sec-ti" id="contact-section">
     <div class="max">
@@ -1002,13 +975,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
           </div>
           <div class="cc">
             <div class="cc-ic">&#128222;</div>
-            <div><div class="cc-lbl" id="ct-ph-l">Phone</div><div class="cc-val" id="ct-ph-v">9779999277 / 8727999977 / 0172-4622277</div></div>
+            <div><div class="cc-lbl" id="ct-ph-l">Phone</div><div class="cc-val" id="ct-ph-v"><a href="tel:9779999277" class="ct-phone-link">9779999277</a> &nbsp;/&nbsp; <a href="tel:8727999977" class="ct-phone-link">8727999977</a> &nbsp;/&nbsp; <a href="tel:01724622277" class="ct-phone-link">0172-4622277</a></div></div>
           </div>
-          <div class="cc">
-            <div class="cc-ic">&#9993;</div>
-            <div><div class="cc-lbl" id="ct-em-l">Email</div><div class="cc-val" id="ct-em-v">newbatrabatteries&#64;gmail&#46;com</div></div>
-          </div>
-          <div class="ct-hours-note cc" style="background:var(--nvdk);border:none;">
+                    <div class="ct-hours-note cc" style="background:var(--nvdk);border:none;">
             <div class="cc-ic" style="background:rgba(255,255,255,.1);">&#128336;</div>
             <div><div class="cc-lbl" id="ct-hr-l" style="color:var(--amlt);">Hours</div><div class="cc-val" id="ct-hr-v" style="color:rgba(255,255,255,.82);font-size:12px;font-weight:500;">Mon&ndash;Sat: 9:00 AM &ndash; 7:30 PM<br/>Sunday: 10:00 AM &ndash; 4:00 PM</div></div>
           </div>
@@ -1156,7 +1125,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
         <div class="fhd" id="f-ct">Contact</div>
         <div class="fci"><span class="fci-i">&#128205;</span><span class="fci-t">Shop 28 &amp; 35, Sector 32C, Chandigarh 160 031</span></div>
         <div class="fci"><span class="fci-i">&#128222;</span><span class="fci-t">9779999277 / 8727999977</span></div>
-        <div class="fci"><span class="fci-i">&#9993;</span><span class="fci-t">newbatrabatteries&#64;gmail&#46;com</span></div>
+        
       </div>
     </div>
     <div class="fbot">
@@ -1193,7 +1162,7 @@ var T = {
     ct_ey:'Find Us',ct_t:'Visit Our Shop',
     ct_addr:'Address',ct_addrv:'Shop No. 28 & 35, Sector 32C\nChandigarh \u2013 160 031',
     ct_ph:'Phone',ct_phv:'9779999277 / 8727999977 / 0172-4622277',
-    ct_em:'Email',ct_emv:'newbatrabatteries&#64;gmail&#46;com',
+    ct_em:'Email',ct_emv:'newbatrabatteries@gmail.com',
     ct_hr:'Hours',ct_hrv:'Mon\u2013Sat: 9:00 AM \u2013 7:30 PM\nSunday: 10:00 AM \u2013 4:00 PM',
     ct_cta:'Call Now for Best Deal',ct_map:'Open in Google Maps \u2192',
     bc:'Capacity',bv:'Voltage',bw:'Warranty',
@@ -1219,7 +1188,7 @@ var T = {
     ct_ey:'\u0939\u092E\u0938\u0947 \u092E\u093F\u0932\u0947\u0902',ct_t:'\u0926\u0941\u0915\u093E\u0928 \u0916\u094B\u091C\u0947\u0902',
     ct_addr:'\u092A\u0924\u093E',ct_addrv:'\u0936\u0949\u092A \u0928\u0902. 28 \u0914\u0930 35, \u0938\u0947\u0915\u094D\u091F\u0930 32C\n\u091A\u0902\u0921\u0940\u0917\u0922\u093C \u2013 160 031',
     ct_ph:'\u092B\u094B\u0928',ct_phv:'9779999277 / 8727999977 / 0172-4622277',
-    ct_em:'\u0908\u092E\u0947\u0932',ct_emv:'newbatrabatteries&#64;gmail&#46;com',
+    ct_em:'\u0908\u092E\u0947\u0932',ct_emv:'newbatrabatteries@gmail.com',
     ct_hr:'\u0938\u092E\u092F',ct_hrv:'\u0938\u094B\u092E\u2013\u0936\u0928\u093F: \u0938\u0941\u092C\u0939 9 \u2013 \u0936\u093E\u092E 7:30\n\u0930\u0935\u093F\u0935\u093E\u0930: \u0938\u0941\u092C\u0939 10 \u2013 \u0926\u094B\u092A\u0939\u0930 4',
     ct_cta:'\u0905\u092D\u0940 \u0915\u0949\u0932 \u0915\u0930\u0947\u0902',ct_map:'\u0917\u0942\u0917\u0932 \u092E\u0948\u092A \u092E\u0947\u0902 \u0916\u094B\u0932\u0947\u0902 \u2192',
     bc:'\u0915\u094D\u0937\u092E\u0924\u093E',bv:'\u0935\u094B\u0932\u094D\u091F\u0947\u091C',bw:'\u0935\u093E\u0930\u0902\u091F\u0940',
@@ -1245,7 +1214,7 @@ var T = {
     ct_ey:'\u0A38\u0A3E\u0A21\u0A47 \u0A15\u0A4B\u0A32 \u0A06\u0A13',ct_t:'\u0A26\u0A41\u0A15\u0A3E\u0A28 \u0A32\u0A71\u0A2D\u0A4B',
     ct_addr:'\u0A2A\u0A24\u0A3E',ct_addrv:'\u0A26\u0A41\u0A15\u0A3E\u0A28 \u0A28\u0A70. 28 \u0A05\u0A24\u0A47 35, \u0A38\u0A48\u0A15\u0A1F\u0A30 32C\n\u0A1A\u0A70\u0A21\u0A40\u0A17\u0A22\u0A3C \u2013 160 031',
     ct_ph:'\u0A2B\u0A4B\u0A28',ct_phv:'9779999277 / 8727999977 / 0172-4622277',
-    ct_em:'\u0A08\u0A2E\u0A47\u0A32',ct_emv:'newbatrabatteries&#64;gmail&#46;com',
+    ct_em:'\u0A08\u0A2E\u0A47\u0A32',ct_emv:'newbatrabatteries@gmail.com',
     ct_hr:'\u0A38\u0A2E\u0A3E\u0A02',ct_hrv:'\u0A38\u0A4B\u0A2E\u2013\u0A38\u0A3C\u0A28\u0A40: \u0A38\u0A35\u0A47\u0A30\u0A47 9 \u2013 \u0A38\u0A3C\u0A3E\u0A2E 7:30\n\u0A10\u0A24\u0A35\u0A3E\u0A30: \u0A38\u0A35\u0A47\u0A30\u0A47 10 \u2013 \u0A26\u0A41\u0A2A\u0A39\u0A3F\u0A30 4',
     ct_cta:'\u0A39\u0A41\u0A23\u0A47 \u0A15\u0A3E\u0A32 \u0A15\u0A30\u0A4B',ct_map:'\u0A17\u0A42\u0A17\u0A32 \u0A2E\u0A48\u0A2A \u0A16\u0A4B\u0A32\u0A4B \u2192',
     bc:'\u0A38\u0A2E\u0A30\u0A71\u0A25\u0A3E',bv:'\u0A35\u0A4B\u0A32\u0A1F\u0A47\u0A1C',bw:'\u0A35\u0A3E\u0A30\u0A70\u0A1F\u0A40',
