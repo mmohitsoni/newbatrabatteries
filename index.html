@@ -217,18 +217,21 @@ footer{background:linear-gradient(135deg,var(--nvdk),var(--nv));padding:34px 52p
 .fbr{display:flex;gap:11px;}
 .fbr img{height:13px;object-fit:contain;filter:brightness(0) invert(1);opacity:.35;}
 
-.wa-float{
-  position:fixed;bottom:24px;right:24px;
-  width:48px;height:48px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 2px 12px rgba(0,0,0,.18);
+.float-btns{
+  position:fixed;bottom:24px;right:20px;
+  display:flex;flex-direction:column;gap:10px;
   z-index:500;
-  transition:transform .2s,box-shadow .2s;
-  opacity:.85;
 }
-.wa-float:hover{transform:scale(1.08);box-shadow:0 4px 20px rgba(0,0,0,.25);opacity:1;}
+.float-btn{
+  width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 14px rgba(0,0,0,.25);
+  transition:transform .2s,box-shadow .2s;
+  opacity:.9;
+}
+.float-btn:hover{transform:scale(1.1);box-shadow:0 5px 20px rgba(0,0,0,.3);opacity:1;}
+.float-call{background:linear-gradient(135deg,#1E3050,#2D4A6B);}
+.float-wa{background:#25D366;}
 
 
 /* ═══════════════ HERO v2 ═══════════════ */
@@ -394,6 +397,115 @@ footer{background:linear-gradient(135deg,var(--nvdk),var(--nv));padding:34px 52p
 .sw{transform-box:fill-box;transform-origin:center;animation:swspin 7s linear both;}
 @keyframes swspin{0%{transform:rotate(0);}20%{transform:rotate(600deg);}30%{transform:rotate(600deg);}62%{transform:rotate(600deg);}70%{transform:rotate(1200deg);}100%{transform:rotate(1400deg);}}
 #scene-lbl{position:absolute;bottom:0;left:0;right:0;background:rgba(10,22,40,.8);padding:5px 10px;font-size:9px;font-weight:700;color:var(--amlt);letter-spacing:2px;text-transform:uppercase;text-align:center;z-index:20;border-top:1px solid rgba(240,170,64,.15);}
+
+
+/* ═══════════════════════════════
+   COMPREHENSIVE MOBILE FIX
+═══════════════════════════════ */
+html, body { overflow-x: hidden; max-width: 100vw; }
+* { max-width: 100%; }
+
+@media(max-width: 768px) {
+
+  /* NAV */
+  nav { padding: 0 16px; height: 56px; }
+  .nav-logo { height: 30px; }
+  nav .nav-links, .nav-right .lang-btns, .nav-right .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .nav-mobile.open { max-height: 500px; }
+
+  /* HERO */
+  .hero { padding: 0; }
+  .hero-top { grid-template-columns: 1fr; padding: 28px 18px 20px; gap: 20px; }
+  .h-ti { font-size: 32px; }
+  .h-su2 { font-size: 13px; }
+  .h-btns { flex-direction: column; gap: 10px; }
+  .btn-a, .btn-o { width: 100%; text-align: center; padding: 13px; }
+  .h-rating { flex-wrap: wrap; }
+  .h-pills { gap: 10px; }
+  .h-pill { font-size: 11px; }
+
+  /* HERO SCENE BOX - full width on mobile */
+  .hero-scene-box { width: 100%; border-radius: 6px; }
+  .scene-body { height: 160px; }
+
+  /* GOLD STRIP */
+  .gstrip { padding: 10px 14px; gap: 10px; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+  .gstrip span { font-size: 10px; white-space: nowrap; flex-shrink: 0; }
+
+  /* SECTIONS */
+  .sec { padding: 36px 18px; }
+  .stitle { font-size: 24px; }
+  .eyebrow { font-size: 9px; }
+
+  /* WHY GRID - 2 cols on mobile */
+  .why { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .wcard { padding: 14px 10px; }
+  .wcard .ic { font-size: 22px; }
+  .wcard h4 { font-size: 12px; }
+  .wcard p { font-size: 11px; }
+
+  /* REVIEWS */
+  .rv-wrap { grid-template-columns: 1fr; gap: 18px; }
+  .rbox { display: flex; align-items: center; gap: 16px; padding: 14px 16px; text-align: left; }
+  .rbig { font-size: 44px; }
+  .rstars { font-size: 16px; margin: 0; }
+  .rcnt { font-size: 10px; }
+
+  /* BRANDS - 3 per row on mobile */
+  .brands { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .brbx { height: 50px; padding: 8px 5px; }
+  .brbx img { max-width: 90px; max-height: 28px; }
+
+  /* EMI */
+  .emi { padding: 16px 18px; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .emi-logos { flex-wrap: wrap; gap: 10px; }
+  .emi-bx { width: 130px; height: 42px; padding: 6px 10px; }
+  .emi-bx img { max-width: 108px; max-height: 26px; }
+
+  /* CONTACT SECTION */
+  .ct-below { grid-template-columns: 1fr; gap: 12px; }
+  .own-box img { height: 220px; }
+  #leaflet-map { height: 240px; }
+  .cc { padding: 10px 12px; }
+  .cc-ic { width: 32px; height: 32px; font-size: 13px; }
+  .cc-val { font-size: 12px; }
+
+  /* PRODUCTS PAGE */
+  .ph { padding: 28px 18px 20px; }
+  .ph-ti { font-size: 26px; }
+  .ph-su { font-size: 12px; }
+
+  /* FILTER BAR - scrollable on mobile */
+  .fbar { padding: 0; top: 56px; overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; }
+  .fbar::-webkit-scrollbar { display: none; }
+  .filter-btn { padding: 13px 14px; font-size: 11px; white-space: nowrap; flex-shrink: 0; }
+
+  /* BATTERY GRID - 1 col on mobile */
+  .bat-grid { grid-template-columns: 1fr; padding: 18px 16px; gap: 14px; }
+  .bat-img-wrap { height: 130px; }
+  .bat-img { height: 130px; }
+  .bat-name { font-size: 15px; }
+
+  /* ADMIN */
+  .adm-h { padding: 20px 18px; }
+  .adm-sec { padding: 18px 16px; }
+  .tog-grid { grid-template-columns: 1fr; }
+  .add-form-body.open { grid-template-columns: 1fr; }
+
+  /* FOOTER */
+  footer { padding: 28px 18px 14px; }
+  .fg { grid-template-columns: 1fr; gap: 20px; }
+  .fbot { flex-direction: column; gap: 8px; }
+  .fbr { flex-wrap: wrap; gap: 10px; }
+}
+
+@media(max-width: 380px) {
+  .why { grid-template-columns: 1fr; }
+  .brands { grid-template-columns: repeat(2, 1fr); }
+  .h-ti { font-size: 28px; }
+  .bat-grid { padding: 14px 12px; }
+}
 
 </style>
 </head>
@@ -742,7 +854,7 @@ footer{background:linear-gradient(135deg,var(--nvdk),var(--nv));padding:34px 52p
           </div>
           <div class="cc">
             <div class="cc-ic">&#9993;</div>
-            <div><div class="cc-lbl" id="ct-em-l">Email</div><div class="cc-val" id="ct-em-v"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e18f84968380959380838095958493888492a1868c80888dcf828e8c">[email&#160;protected]</a></div></div>
+            <div><div class="cc-lbl" id="ct-em-l">Email</div><div class="cc-val" id="ct-em-v">newbatrabatteries&#64;gmail&#46;com</div></div>
           </div>
           <div class="ct-hours-note cc" style="background:var(--nvdk);border:none;">
             <div class="cc-ic" style="background:rgba(255,255,255,.1);">&#128336;</div>
@@ -848,7 +960,7 @@ footer{background:linear-gradient(135deg,var(--nvdk),var(--nv));padding:34px 52p
         <div class="fhd" id="f-ct">Contact</div>
         <div class="fci"><span class="fci-i">&#128205;</span><span class="fci-t">Shop 28 &amp; 35, Sector 32C, Chandigarh 160 031</span></div>
         <div class="fci"><span class="fci-i">&#128222;</span><span class="fci-t">9779999277 / 8727999977</span></div>
-        <div class="fci"><span class="fci-i">&#9993;</span><span class="fci-t"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f313a283d3e2b2d3e3d3e2b2b3a2d363a2c1f38323e3633713c3032">[email&#160;protected]</a></span></div>
+        <div class="fci"><span class="fci-i">&#9993;</span><span class="fci-t">newbatrabatteries&#64;gmail&#46;com</span></div>
       </div>
     </div>
     <div class="fbot">
@@ -885,7 +997,7 @@ var T = {
     ct_ey:'Find Us',ct_t:'Visit Our Shop',
     ct_addr:'Address',ct_addrv:'Shop No. 28 & 35, Sector 32C\nChandigarh \u2013 160 031',
     ct_ph:'Phone',ct_phv:'9779999277 / 8727999977 / 0172-4622277',
-    ct_em:'Email',ct_emv:'newbatrabatteries@gmail.com',
+    ct_em:'Email',ct_emv:'newbatrabatteries&#64;gmail&#46;com',
     ct_hr:'Hours',ct_hrv:'Mon\u2013Sat: 9:00 AM \u2013 7:30 PM\nSunday: 10:00 AM \u2013 4:00 PM',
     ct_cta:'Call Now for Best Deal',ct_map:'Open in Google Maps \u2192',
     bc:'Capacity',bv:'Voltage',bw:'Warranty',
@@ -911,7 +1023,7 @@ var T = {
     ct_ey:'\u0939\u092E\u0938\u0947 \u092E\u093F\u0932\u0947\u0902',ct_t:'\u0926\u0941\u0915\u093E\u0928 \u0916\u094B\u091C\u0947\u0902',
     ct_addr:'\u092A\u0924\u093E',ct_addrv:'\u0936\u0949\u092A \u0928\u0902. 28 \u0914\u0930 35, \u0938\u0947\u0915\u094D\u091F\u0930 32C\n\u091A\u0902\u0921\u0940\u0917\u0922\u093C \u2013 160 031',
     ct_ph:'\u092B\u094B\u0928',ct_phv:'9779999277 / 8727999977 / 0172-4622277',
-    ct_em:'\u0908\u092E\u0947\u0932',ct_emv:'newbatrabatteries@gmail.com',
+    ct_em:'\u0908\u092E\u0947\u0932',ct_emv:'newbatrabatteries&#64;gmail&#46;com',
     ct_hr:'\u0938\u092E\u092F',ct_hrv:'\u0938\u094B\u092E\u2013\u0936\u0928\u093F: \u0938\u0941\u092C\u0939 9 \u2013 \u0936\u093E\u092E 7:30\n\u0930\u0935\u093F\u0935\u093E\u0930: \u0938\u0941\u092C\u0939 10 \u2013 \u0926\u094B\u092A\u0939\u0930 4',
     ct_cta:'\u0905\u092D\u0940 \u0915\u0949\u0932 \u0915\u0930\u0947\u0902',ct_map:'\u0917\u0942\u0917\u0932 \u092E\u0948\u092A \u092E\u0947\u0902 \u0916\u094B\u0932\u0947\u0902 \u2192',
     bc:'\u0915\u094D\u0937\u092E\u0924\u093E',bv:'\u0935\u094B\u0932\u094D\u091F\u0947\u091C',bw:'\u0935\u093E\u0930\u0902\u091F\u0940',
@@ -937,7 +1049,7 @@ var T = {
     ct_ey:'\u0A38\u0A3E\u0A21\u0A47 \u0A15\u0A4B\u0A32 \u0A06\u0A13',ct_t:'\u0A26\u0A41\u0A15\u0A3E\u0A28 \u0A32\u0A71\u0A2D\u0A4B',
     ct_addr:'\u0A2A\u0A24\u0A3E',ct_addrv:'\u0A26\u0A41\u0A15\u0A3E\u0A28 \u0A28\u0A70. 28 \u0A05\u0A24\u0A47 35, \u0A38\u0A48\u0A15\u0A1F\u0A30 32C\n\u0A1A\u0A70\u0A21\u0A40\u0A17\u0A22\u0A3C \u2013 160 031',
     ct_ph:'\u0A2B\u0A4B\u0A28',ct_phv:'9779999277 / 8727999977 / 0172-4622277',
-    ct_em:'\u0A08\u0A2E\u0A47\u0A32',ct_emv:'newbatrabatteries@gmail.com',
+    ct_em:'\u0A08\u0A2E\u0A47\u0A32',ct_emv:'newbatrabatteries&#64;gmail&#46;com',
     ct_hr:'\u0A38\u0A2E\u0A3E\u0A02',ct_hrv:'\u0A38\u0A4B\u0A2E\u2013\u0A38\u0A3C\u0A28\u0A40: \u0A38\u0A35\u0A47\u0A30\u0A47 9 \u2013 \u0A38\u0A3C\u0A3E\u0A2E 7:30\n\u0A10\u0A24\u0A35\u0A3E\u0A30: \u0A38\u0A35\u0A47\u0A30\u0A47 10 \u2013 \u0A26\u0A41\u0A2A\u0A39\u0A3F\u0A30 4',
     ct_cta:'\u0A39\u0A41\u0A23\u0A47 \u0A15\u0A3E\u0A32 \u0A15\u0A30\u0A4B',ct_map:'\u0A17\u0A42\u0A17\u0A32 \u0A2E\u0A48\u0A2A \u0A16\u0A4B\u0A32\u0A4B \u2192',
     bc:'\u0A38\u0A2E\u0A30\u0A71\u0A25\u0A3E',bv:'\u0A35\u0A4B\u0A32\u0A1F\u0A47\u0A1C',bw:'\u0A35\u0A3E\u0A30\u0A70\u0A1F\u0A40',
