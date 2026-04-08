@@ -643,7 +643,6 @@ html, body { overflow-x: hidden; max-width: 100vw; }
 <!-- HOME -->
 <div class="page active" id="page-home">
   <div class="hero" style="position:relative;">
-  <button class="hero-game-btn" onclick="showPage('game')">🔋 Get a Free Battery!</button>
   <div class="hero-top">
 
     <!-- LEFT: Text -->
@@ -939,7 +938,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
         <strong>&#x1F3AF; Catch the battery and win a FREE battery!</strong><br/>
         Tap or click it before it escapes...
       </div>
-      <div class="fbat-score" id="fbat-score">Attempts: 0 / 10</div>
+      <div class="fbat-score" id="fbat-score">Attempts: 0</div>
       <div class="fbat-arena" id="fbat-arena">
         <div class="fbat-battery" id="fbat-bat">
           <svg width="88" height="44" viewBox="0 0 88 44" xmlns="http://www.w3.org/2000/svg">
@@ -963,7 +962,7 @@ html, body { overflow-x: hidden; max-width: 100vw; }
               WhatsApp
             </a>
           </div>
-          <button class="fbat-reset" onclick="resetFBat()">&#8635; Play Again</button>
+          <button class="fbat-reset" onclick="resetFBat()">&#8635; Try Again</button>
         </div>
       </div>
     </div>
@@ -1048,9 +1047,9 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   </div>
   <div class="gp-body">
     <div class="gp-eyebrow">New Batra Batteries &middot; Chandigarh</div>
-    <h1 class="gp-title">Catch the <span>Battery!</span></h1>
-    <p class="gp-sub"><strong>Win a FREE battery!</strong><br/>Tap it before it escapes...</p>
-    <div class="gp-score" id="gp-score">Attempts: 0 / 10</div>
+    <h1 class="gp-title">Can You <span>Catch It?</span></h1>
+    <p class="gp-sub"><strong>Can you catch it?</strong> &#128521;<br/>Tap the battery if you dare...</p>
+    <div class="gp-score" id="gp-score">Attempts: 0</div>
     <div class="gp-arena" id="gp-arena">
       <div class="gp-battery" id="gp-bat">
         <svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
@@ -1062,14 +1061,14 @@ html, body { overflow-x: hidden; max-width: 100vw; }
       </div>
       <div class="gp-arena-hint" id="gp-hint">TAP THE BATTERY &#9889;</div>
       <div class="gp-win" id="gp-win">
-        <div class="gp-win-emoji">&#127881;</div>
-        <div class="gp-win-title">You Caught It!</div>
-        <div class="gp-win-sub">Show this screen at our shop and claim your<br/><strong style="color:var(--amlt);font-size:15px;">FREE Battery!</strong></div>
+        <div class="gp-win-emoji">&#128514;</div>
+        <div class="gp-win-title">Nice Try!</div>
+        <div class="gp-win-sub">The battery is <strong style="color:var(--amlt);">uncatchable</strong>... &#128514;<br/>But you CAN get the <strong style="color:var(--amlt);">best battery deal</strong> in Chandigarh right now!</div>
         <div class="gp-win-btns">
           <a href="tel:9779999277" class="gp-call">&#128222; Call 9779999277</a>
-          <a href="https://wa.me/919779999277?text=Hi!+I+caught+the+free+battery+on+your+website!" target="_blank" class="gp-wa">&#128172; WhatsApp</a>
+          <a href="https://wa.me/919779999277?text=Hi!+I+tried+catching+the+battery+on+your+website!+What's+your+best+deal?" target="_blank" class="gp-wa">&#128172; WhatsApp</a>
         </div>
-        <button class="gp-reset" onclick="resetGP()">&#8635; Play Again</button>
+        <button class="gp-reset" onclick="resetGP()">&#8635; Try Again</button>
       </div>
     </div>
   </div>
@@ -1748,11 +1747,46 @@ window.addEventListener('load', function() {
 
 
 
-var _gp_att=0,_gp_max=10;
-function gpMoveBat(){var a=document.getElementById('gp-arena'),b=document.getElementById('gp-bat');if(!a||!b)return;var w=Math.max(a.offsetWidth-112,20),h=Math.max(a.offsetHeight-62,20);b.style.left=(8+Math.random()*w)+'px';b.style.top=(8+Math.random()*h)+'px';}
-function gpCatch(e){if(e)e.stopPropagation();_gp_att++;var b=document.getElementById('gp-bat'),w=document.getElementById('gp-win'),s=document.getElementById('gp-score'),h=document.getElementById('gp-hint');if(!b||!w)return;if(_gp_att>=_gp_max){b.style.display='none';if(h)h.style.display='none';w.classList.add('show');if(s)s.textContent='Got it in '+_gp_att+' tries!';return;}if(s)s.textContent='Attempts: '+_gp_att+' / '+_gp_max;setTimeout(gpMoveBat,40+Math.random()*100);}
-function resetGP(){_gp_att=0;var b=document.getElementById('gp-bat'),w=document.getElementById('gp-win'),s=document.getElementById('gp-score'),h=document.getElementById('gp-hint');if(b)b.style.display='block';if(w)w.classList.remove('show');if(s)s.textContent='Attempts: 0 / 10';if(h)h.style.display='block';setTimeout(gpMoveBat,80);}
-window.addEventListener('load',function(){var b=document.getElementById('gp-bat');if(!b)return;b.addEventListener('click',gpCatch);b.addEventListener('touchstart',function(e){e.preventDefault();gpCatch(e);},{passive:false});b.addEventListener('mouseenter',function(){if(_gp_att<_gp_max)gpMoveBat();});});
+var _gp_att=0,_gp_tease=15;
+function gpMoveBat(){
+  var a=document.getElementById('gp-arena'),b=document.getElementById('gp-bat');
+  if(!a||!b)return;
+  var w=Math.max(a.offsetWidth-112,20),h=Math.max(a.offsetHeight-62,20);
+  b.style.left=(8+Math.random()*w)+'px';
+  b.style.top=(8+Math.random()*h)+'px';
+}
+function gpCatch(e){
+  if(e)e.stopPropagation();
+  _gp_att++;
+  var b=document.getElementById('gp-bat'),win=document.getElementById('gp-win'),s=document.getElementById('gp-score'),h=document.getElementById('gp-hint');
+  if(!b)return;
+  // After 15 tries show teaser - battery still escapes, never caught!
+  if(_gp_att===_gp_tease){
+    if(win)win.classList.add('show');
+  }
+  if(s){
+    var msgs=['Too slow! ','Almost! ','So close! ','Nope! ','Keep trying! '];
+    s.textContent=msgs[_gp_att%msgs.length]+' Attempts: '+_gp_att;
+  }
+  // Battery ALWAYS escapes - never caught
+  setTimeout(gpMoveBat,30+Math.random()*80);
+}
+function resetGP(){
+  _gp_att=0;
+  var b=document.getElementById('gp-bat'),win=document.getElementById('gp-win'),s=document.getElementById('gp-score'),h=document.getElementById('gp-hint');
+  if(b)b.style.display='block';
+  if(win)win.classList.remove('show');
+  if(s)s.textContent='Attempts: 0';
+  if(h)h.style.display='block';
+  setTimeout(gpMoveBat,80);
+}
+window.addEventListener('load',function(){
+  var b=document.getElementById('gp-bat');
+  if(!b)return;
+  b.addEventListener('click',gpCatch);
+  b.addEventListener('touchstart',function(e){e.preventDefault();gpCatch(e);},{passive:false});
+  b.addEventListener('mouseenter',function(){gpMoveBat();});
+});
 var _spOrig=showPage;showPage=function(p){_spOrig(p);if(p==='game')resetGP();};
 
 </script>
